@@ -1,4 +1,4 @@
-import RockPaperScissors from "./Rock-Paper-Scissors/Game";
+import RockPaperScissors from "./Rock-Paper-Scissors/RPSGame";
 
 export default function App() {
   return (
