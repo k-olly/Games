@@ -25,6 +25,13 @@ export default function RockPaperScissors() {
         setPlayerChoose(id);
     };
 
+    /*function newHandleClick(choice) {
+        return () => {
+            chooseRandomButton();
+            setPlayerChoose(choice);
+        }
+    }*/
+
     function chooseWinner() {
         if (playerChoose === 'rock' && computerChoose === 'scissors' || playerChoose === 'paper' && computerChoose === 'rock' || playerChoose === 'scissors' && computerChoose === 'paper') {
             return 'You won. Congratulations!';
@@ -45,13 +52,13 @@ export default function RockPaperScissors() {
             <span>Choose your next step:</span>
             <br></br>
 
-            <button id='rock' onClick={handleClick} >
+            <button id='rock' onClick={handleClick}  /*onClick={newHandleClick('rock')}*/ >
                 <img src={rock} alt='rock icon' width='150px' />
             </button>
-            <button id='paper' onClick={handleClick}>
+            <button id='paper' onClick={handleClick} /*onClick={newHandleClick('paper')}*/>
                 <img src={paper} alt='paper icon' width='150px' />
             </button>
-            <button id='scissors' onClick={handleClick}>
+            <button id='scissors' onClick={handleClick} /*onClick={newHandleClick('scissors')}*/>
                 <img src={scissors} alt='scissors icon' width='150px' />
             </button>
             <br></br>
