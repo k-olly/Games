@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import style from '../App.css';
 import rock from '../Images/rock.png';
 import paper from '../Images/paper.png';
 import scissors from '../Images/scissors.png';
@@ -33,7 +34,9 @@ export default function RockPaperScissors() {
     }*/
 
     function chooseWinner() {
-        if (playerChoose === 'rock' && computerChoose === 'scissors' || playerChoose === 'paper' && computerChoose === 'rock' || playerChoose === 'scissors' && computerChoose === 'paper') {
+        if (playerChoose === null) {
+            return '';
+        } else if (playerChoose === 'rock' && computerChoose === 'scissors' || playerChoose === 'paper' && computerChoose === 'rock' || playerChoose === 'scissors' && computerChoose === 'paper') {
             return 'You won. Congratulations!';
         } else if ( playerChoose === computerChoose) {
             return 'Tie. Give it another try!';
@@ -63,9 +66,9 @@ export default function RockPaperScissors() {
             </button>
             <br></br>
 
-            <span>Computer chose: {computerChoose}</span>
+            <span>{computerChoose ? `Computer chose: ${computerChoose}`:''}</span>
             <br></br>
-            <span>The Winner is: {chooseWinner()}</span>
+            <span>{chooseWinner()}</span>
             <br></br>
             
             <button id='new-game' onClick={handleNewGame} >New Game</button>

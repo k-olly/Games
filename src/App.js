@@ -1,8 +1,9 @@
 import RockPaperScissors from "./Rock-Paper-Scissors/RPSGame";
+import style from './App.css';
 
 export default function App() {
   return (
-    <>
+    <div>
       <header>
         <h1>Welcome on my Page!</h1>
       </header>
@@ -16,7 +17,7 @@ export default function App() {
         <p>Enter your name and choose a shape from the buttons below. You will play against a computer. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round! If you want to play another round click on New Game.</p>
       </section>
       <RockPaperScissors/>
-    </>
+    </div>
   );
 }
 
