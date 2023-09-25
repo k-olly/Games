@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import style from '../App.css';
+import style from './RPSGame.css';
 import rock from '../Images/rock.png';
 import paper from '../Images/paper.png';
 import scissors from '../Images/scissors.png';
@@ -51,17 +51,22 @@ export default function RockPaperScissors() {
     };
 
     return (
-        <>
+        <div className='rpscomponent'>
+            <section id='rock-paper-scissors'>
+                <h3>Rock-Paper-Scissors</h3>
+                <h4>How to play the game?</h4>
+                <p>Enter your name and choose a shape from the buttons below. You will play against a computer. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round! If you want to play another round click on New Game.</p>
+            </section>
             <span>Choose your next step:</span>
             <br></br>
 
-            <button id='rock' onClick={handleClick}  /*onClick={newHandleClick('rock')}*/ >
+            <button className='rpsbutton' id='rock' title='Rock' onClick={handleClick}  /*onClick={newHandleClick('rock')}*/ >
                 <img src={rock} alt='rock icon' width='150px' />
             </button>
-            <button id='paper' onClick={handleClick} /*onClick={newHandleClick('paper')}*/>
+            <button className='rpsbutton' id='paper' title='Paper' onClick={handleClick} /*onClick={newHandleClick('paper')}*/>
                 <img src={paper} alt='paper icon' width='150px' />
             </button>
-            <button id='scissors' onClick={handleClick} /*onClick={newHandleClick('scissors')}*/>
+            <button className='rpsbutton' id='scissors' title='Scissors' onClick={handleClick} /*onClick={newHandleClick('scissors')}*/>
                 <img src={scissors} alt='scissors icon' width='150px' />
             </button>
             <br></br>
@@ -71,7 +76,7 @@ export default function RockPaperScissors() {
             <span>{chooseWinner()}</span>
             <br></br>
             
-            <button id='new-game' onClick={handleNewGame} >New Game</button>
-        </>
+            <button className='rpsbutton' id='new-game' onClick={handleNewGame} >New Game</button>
+        </div>
     )
 };

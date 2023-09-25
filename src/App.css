@@ -2,11 +2,33 @@ body {
     text-align: center;
 }
 
-button {
-    font-size: 30px;
+header,
+main {
+    font-family: 'Bubbler One', sans-serif;
+    background-color: hsla(327, 100%, 80%, 0.95);
+}
+
+h1{
+    margin: 0;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 120px;
+}
+
+h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 70px;
     font-weight: bold;
-    color: white;
-    background-color: rgb(6, 138, 148);
-    border-radius: 7%;
-    padding: 5px;
+}
+
+h3 {
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+.tryout {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 40px;
+    padding: 100px;
+    background-color: white;
 }

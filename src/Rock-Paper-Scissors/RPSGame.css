@@ -1,0 +1,22 @@
+.rpscomponent {
+    padding: 40px 470px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: hsla(196, 100%, 76%, 1);
+}
+
+.rpsbutton {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(6, 138, 148);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.rpsbutton:hover {
+    background-color: hsla(196, 100%, 23%, 1);
+}
+
+#paper {
+    margin: 20px;
+}
