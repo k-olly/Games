@@ -24,10 +24,10 @@
     border: 2px solid rgb(6, 138, 148);
 }
 
-/*.winner {
+.winner {
     margin-top: 20px;
     margin-bottom: 20px;
-}*/
+}
 
 .iconbuttons {
     display: flex;

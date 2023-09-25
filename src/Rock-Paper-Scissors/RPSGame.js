@@ -50,6 +50,13 @@ export default function RockPaperScissors() {
         setPlayerChoose(null);
     };
 
+    const winner = computerChoose ? (
+        <>
+            <span className='winner'>Computer chose: {computerChoose}</span>
+            <span className='winner'>{chooseWinner()}</span>
+        </>
+    ) : '';
+    
     return (
         <div className='rpscomponent'>
             <section id='rock-paper-scissors'>
@@ -70,10 +77,7 @@ export default function RockPaperScissors() {
                     <img src={scissors} alt='scissors icon' width='150px' />
                 </button>
             </div>
-
-            <span className='winner'>{computerChoose ? `Computer chose: ${computerChoose}`:''}</span>
-            <span className='winner'>{chooseWinner()}</span>
-            
+            {winner}
             <button className='rpsbutton' id='new-game' onClick={handleNewGame} >New Game</button>
         </div>
     )
