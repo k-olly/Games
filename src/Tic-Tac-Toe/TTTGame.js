@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import style from './TTTGame.css';
 
 function Square({value, onSquareClick}) {
   return (
@@ -36,21 +37,26 @@ export default function Board() {
 
   return (
     <>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      <div className='tttcomponent'>
+        <h3>Tic-Tac-Toe</h3>
+        <h4>How to play the game?</h4>
+        <p>The game is played on a grid that's 3 squares by 3 squares. You are X , the computer is O . Players take turns putting their marks in empty squares. The first player to get 3 of his/her marks in a row (up, down, across, or diagonally) is the winner.</p>
+        <div className="status">{status}</div>
+        <div className="board-row">
+          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        </div>
       </div>
     </>
   );
