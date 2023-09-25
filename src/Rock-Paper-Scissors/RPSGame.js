@@ -71,8 +71,8 @@ export default function RockPaperScissors() {
                 </button>
             </div>
 
-            <span>{computerChoose ? `Computer chose: ${computerChoose}`:''}</span>
-            <span>{chooseWinner()}</span>
+            <span className='winner'>{computerChoose ? `Computer chose: ${computerChoose}`:''}</span>
+            <span className='winner'>{chooseWinner()}</span>
             
             <button className='rpsbutton' id='new-game' onClick={handleNewGame} >New Game</button>
         </div>

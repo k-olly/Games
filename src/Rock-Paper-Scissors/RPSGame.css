@@ -6,16 +6,16 @@
     margin: 0px 350px;
     font-family: 'Press Start 2P', cursive;
     background-color: hsla(199, 81%, 21%, 1);
-    color: hsla(199, 58%, 89%, 1);
+    color: hsla(179, 8%, 96%, 1);
 }
 
 .rpsbutton {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
-    color: white;
+    color: hsla(179, 8%, 96%, 1);
     background-color: rgb(6, 138, 148);
     border-radius: 10px;
-    border: 2px solid hsla(199, 58%, 89%, 1);
+    border: 2px solid hsla(179, 8%, 96%, 1);
     padding: 20px;
 }
 
@@ -23,6 +23,11 @@
     background-color: hsla(199, 81%, 16%, 1);
     border: 2px solid rgb(6, 138, 148);
 }
+
+/*.winner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}*/
 
 .iconbuttons {
     display: flex;
@@ -49,4 +54,9 @@ h4 {
 
 #paper {
     margin: 0px 20px;
+}
+
+#new-game {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
