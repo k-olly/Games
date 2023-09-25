@@ -5,30 +5,34 @@ body {
 header,
 main {
     font-family: 'Bubbler One', sans-serif;
-    background-color: hsla(327, 100%, 80%, 0.95);
+    background-color: hsla(350, 100%, 81%, 1);
+    margin: 0px 350px;
 }
 
 h1{
     margin: 0;
+    padding: 0px 60px;
     font-family: 'Bungee Shade', cursive;
     font-size: 120px;
 }
 
 h2 {
     margin: 0;
-    padding: 20px;
+    padding: 20px 60px;
     font-size: 70px;
     font-weight: bold;
 }
 
 h3 {
-    padding-bottom: 40px;
+    padding: 0px 60px 40px 60px;
     font-size: 40px;
 }
 
 .tryout {
     font-family: 'Bubbler One', sans-serif;
     font-size: 40px;
-    padding: 100px;
-    background-color: white;
+    font-weight: bold;
+    margin: 0px;
+    padding: 130px;
+    background-color: hsla(336, 50%, 50%, 1);
 }

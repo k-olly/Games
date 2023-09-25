@@ -55,26 +55,24 @@ export default function RockPaperScissors() {
             <section id='rock-paper-scissors'>
                 <h3>Rock-Paper-Scissors</h3>
                 <h4>How to play the game?</h4>
-                <p>Enter your name and choose a shape from the buttons below. You will play against a computer. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round! If you want to play another round click on New Game.</p>
+                <p>Choose a shape from the buttons below. You will play against a computer. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round! If you want to play another round click on New Game.</p>
             </section>
-            <span>Choose your next step:</span>
-            <br></br>
+            <span id='choose'>Choose your next step:</span>
 
-            <button className='rpsbutton' id='rock' title='Rock' onClick={handleClick}  /*onClick={newHandleClick('rock')}*/ >
-                <img src={rock} alt='rock icon' width='150px' />
-            </button>
-            <button className='rpsbutton' id='paper' title='Paper' onClick={handleClick} /*onClick={newHandleClick('paper')}*/>
-                <img src={paper} alt='paper icon' width='150px' />
-            </button>
-            <button className='rpsbutton' id='scissors' title='Scissors' onClick={handleClick} /*onClick={newHandleClick('scissors')}*/>
-                <img src={scissors} alt='scissors icon' width='150px' />
-            </button>
-            <br></br>
+            <div className='iconbuttons'>
+                <button className='rpsbutton' id='rock' title='Rock' onClick={handleClick}  /*onClick={newHandleClick('rock')}*/ >
+                    <img src={rock} alt='rock icon' width='150px' />
+                </button>
+                <button className='rpsbutton' id='paper' title='Paper' onClick={handleClick} /*onClick={newHandleClick('paper')}*/>
+                    <img src={paper} alt='paper icon' width='150px' />
+                </button>
+                <button className='rpsbutton' id='scissors' title='Scissors' onClick={handleClick} /*onClick={newHandleClick('scissors')}*/>
+                    <img src={scissors} alt='scissors icon' width='150px' />
+                </button>
+            </div>
 
             <span>{computerChoose ? `Computer chose: ${computerChoose}`:''}</span>
-            <br></br>
             <span>{chooseWinner()}</span>
-            <br></br>
             
             <button className='rpsbutton' id='new-game' onClick={handleNewGame} >New Game</button>
         </div>
