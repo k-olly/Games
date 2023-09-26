@@ -38,3 +38,55 @@ h4 {
     font-size: 25px;
     font-weight: bold;
 }
+
+#new-game {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: hsla(179, 8%, 96%, 1);
+    background-color: hsla(199, 81%, 16%, 1);
+    border-radius: 10px;
+    border: 2px solid hsla(179, 8%, 96%, 1);
+    padding: 20px;
+}
+
+#new-game:hover {
+    background-color: hsla(199, 81%, 67%, 1);
+    border: 2px solid hsla(199, 81%, 16%, 1);
+    color: hsla(199, 81%, 16%, 1);
+}
+
+#partner {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    line-height: 30px;
+    color: hsla(179, 8%, 96%, 1);
+    background-color: hsla(199, 81%, 16%, 1);
+    border-radius: 10px;
+    border: 2px solid hsla(179, 8%, 96%, 1);
+    padding: 20px;
+    margin: 0px 20px 60px 20px;
+} 
+
+#partner:hover {
+    background-color: hsla(199, 81%, 67%, 1);
+    border: 2px solid hsla(199, 81%, 16%, 1);
+    color: hsla(199, 81%, 16%, 1);
+}
+
+#no-partner {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    line-height: 30px;
+    color: hsla(179, 8%, 96%, 1);
+    background-color: hsla(199, 81%, 16%, 1);
+    border-radius: 10px;
+    border: 2px solid hsla(179, 8%, 96%, 1);
+    padding: 20px;
+    margin: 0px 20px 60px 20px;
+}
+
+#no-partner:hover {
+    background-color: hsla(199, 81%, 67%, 1);
+    border: 2px solid hsla(199, 81%, 16%, 1);
+    color: hsla(199, 81%, 16%, 1);
+}

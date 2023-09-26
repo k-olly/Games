@@ -27,6 +27,10 @@ export default function Board() {
     setXIsNext(!xIsNext);
   }
 
+  function handleNewGame() {
+    setSquares(Array(9).fill(null));
+  }
+
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
@@ -40,7 +44,11 @@ export default function Board() {
       <div className='tttcomponent'>
         <h3>Tic-Tac-Toe</h3>
         <h4>How to play the game?</h4>
-        <p>The game is played on a grid that's 3 squares by 3 squares. You are X , the computer is O . Players take turns putting their marks in empty squares. The first player to get 3 of his/her marks in a row (up, down, across, or diagonally) is the winner.</p>
+        <p>The game is played on a grid that's 3 squares by 3 squares. Choose your partner, you are X , your partner / the computer is O . Players take turns putting their marks in empty squares. The first player to get 3 of his / her marks in a row (up, down, across, or diagonally) is the winner.</p>
+        <div>
+          <button id='partner'>I have a <br></br> partner</button>
+          <button id='no-partner'>I don't have <br></br> a partner</button>
+        </div>
         <div className="status">{status}</div>
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -57,6 +65,7 @@ export default function Board() {
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
+        <button id='new-game' onClick={handleNewGame} >New Game</button>
       </div>
     </>
   );
