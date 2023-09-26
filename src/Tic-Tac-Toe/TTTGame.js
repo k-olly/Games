@@ -10,6 +10,7 @@ function Square({value, onSquareClick}) {
 }
 
 export default function Board() {
+  const [isActive, setIsActive] = useState(false);
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
@@ -39,16 +40,8 @@ export default function Board() {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
-  return (
+  const gameBody = isActive ? (
     <>
-      <div className='tttcomponent'>
-        <h3>Tic-Tac-Toe</h3>
-        <h4>How to play the game?</h4>
-        <p>The game is played on a grid that's 3 squares by 3 squares. Choose your partner, you are X , your partner / the computer is O . Players take turns putting their marks in empty squares. The first player to get 3 of his / her marks in a row (up, down, across, or diagonally) is the winner.</p>
-        <div>
-          <button id='partner'>I have a <br></br> partner</button>
-          <button id='no-partner'>I don't have <br></br> a partner</button>
-        </div>
         <div className="status">{status}</div>
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -66,6 +59,24 @@ export default function Board() {
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
         <button id='new-game' onClick={handleNewGame} >New Game</button>
+    </>
+  ): '';
+
+  function handlePartnerClick() {
+    setIsActive(true);
+  }
+
+  return (
+    <>
+      <div className='tttcomponent'>
+        <h3>Tic-Tac-Toe</h3>
+        <h4>How to play the game?</h4>
+        <p>The game is played on a grid that's 3 squares by 3 squares. Choose your partner, you are X , your partner / the computer is O . Players take turns putting their marks in empty squares. The first player to get 3 of his / her marks in a row (up, down, across, or diagonally) is the winner.</p>
+        <div>
+          <button id='partner' onClick={handlePartnerClick}>I have a <br></br> partner</button>
+          <button id='no-partner'>I don't have <br></br> a partner</button>
+        </div>
+        {gameBody}
       </div>
     </>
   );
