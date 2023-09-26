@@ -62,7 +62,7 @@ export default function RockPaperScissors() {
             <section id='rock-paper-scissors'>
                 <h3>Rock-Paper-Scissors</h3>
                 <h4>How to play the game?</h4>
-                <p>Choose a shape from the buttons below. You will play against a computer. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round! If you want to play another round click on New Game.</p>
+                <p id='description'>Choose a shape from the buttons below. You will play against a computer. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round! If you want to play another round click on New Game.</p>
             </section>
             <span id='choose'>Choose your next step:</span>
 

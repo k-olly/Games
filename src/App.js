@@ -4,7 +4,7 @@ import style from './App.css';
 
 export default function App() {
   return (
-    <div>
+    <div className='app'>
       <header>
         <h1>2Games2You</h1>
       </header>

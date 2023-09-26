@@ -37,3 +37,193 @@ h3 {
     background-color: hsla(336, 50%, 50%, 1);
     color: hsla(179, 8%, 96%, 1);
 }
+
+/*Media querys:
+Mobile devices (320-480px)*/
+/*iPads, Tablets (481-768px)*/
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    header, main, .tttcomponent, .rpscomponent {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 55px;
+    }
+
+    h3 {
+        font-size: 30px;
+        padding: 0px 20px 20px 20px;
+    }
+    p {
+        padding-bottom: 10px;
+    }
+
+    .rpscomponent h3 {
+        line-height: 50px;
+    }
+
+    .rpscomponent h4 {
+        font-size: 20px;
+    }
+
+    .tttcomponent h4 {
+        font-size: 20px;
+    }
+
+    .tryout {
+        font-size: 30px;
+        padding: 70px;
+        line-height: 40px;
+    }
+
+    .status {
+        margin-top: 30px;
+    }
+
+    #description {
+        font-size: 15px;
+    }
+
+    #rock, #paper, #scissors {
+        font-size: 15px;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    header, main, .tttcomponent, .rpscomponent {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 55px;
+    }
+
+    h3 {
+        font-size: 30px;
+        padding: 0px 20px 20px 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        padding-bottom: 10px;
+    }
+
+    .status {
+        margin-top: 30px;
+    }
+
+    .rpscomponent h3 {
+        line-height: 50px;
+    }
+
+    .tryout {
+        font-size: 30px;
+        padding: 70px;
+        line-height: 50px;
+    }
+
+    #rock, #paper, #scissors {
+        font-size: 15px;
+        margin-top: 15px;
+    }
+}
+
+/*Small screens, laptops (769-1024px)
+Desktops, large screens and other (1025-1200px)*/
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+    header, main, .tttcomponent, .rpscomponent {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    p {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    p {
+        padding-bottom: 10px;
+    }
+
+    .status {
+        margin-top: 30px;
+    }
+
+    .rpscomponent h3 {
+        line-height: 50px;
+    }
+
+    .tryout {
+        line-height: 50px;
+    }
+
+    #rock, #paper, #scissors {
+        margin-top: 15px;
+    }
+
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1800px) {
+    h1 {
+        font-size: 70px;
+    }
+
+    h3 {
+        line-height: 50px;
+    }
+
+    .tryout {
+        line-height: 45px;
+    }
+
+    #rock, #paper, #scissors {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 1800px) and (max-width: 2400px) {
+    .tryout {
+        line-height: 45px;
+    }
+}

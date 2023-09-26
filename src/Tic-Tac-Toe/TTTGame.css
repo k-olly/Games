@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px;
-    margin: 0px 350px 150px 350px;
+    padding: 60px 60px 150px 60px;
+    margin: 0px 350px;
     font-family: 'Press Start 2P', cursive;
     background-color: hsla(193, 100%, 35%, 1);
+    color: hsla(179, 8%, 96%, 1);
+}
+
+.tttcomponent h3 {
+    padding-bottom: 10px;
 }
 
 .square {
