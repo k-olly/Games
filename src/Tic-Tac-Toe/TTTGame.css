@@ -23,6 +23,10 @@
     color: hsla(179, 8%, 96%, 1);
 }
 
+.board-row {
+    display: flex;
+}
+
 .status {
     margin-bottom: 40px;
     font-size: 20px;
