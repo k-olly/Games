@@ -75,7 +75,7 @@ export default function Board() {
   let status;
   if (winner) {
     status = 'Winner: ' + winner;
-  } else {
+  } else if(isActive) {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
