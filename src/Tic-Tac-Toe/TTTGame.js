@@ -68,6 +68,7 @@ export default function Board() {
     setHideWithoutPartnerButton(false);
     setIsActive(false);
     setComputerIsActive(false);
+    setXIsNext('X');
   }
 
   const winner = calculateWinner(squares);
