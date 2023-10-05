@@ -11,8 +11,11 @@ function Square({value, onSquareClick}) {
 
 export default function Board() {
   const [isActive, setIsActive] = useState(false);
+  const [computerIsActive, setComputerIsActive] = useState(false);
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [hidePartnerButton, setHidePartnerButton] = useState(false);
+  const [hideWithoutPartnerButton, setHideWithoutPartnerButton] = useState(false);
 
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
@@ -28,8 +31,43 @@ export default function Board() {
     setXIsNext(!xIsNext);
   }
 
+  // New code about how 'I don't have a partner' works
+  function randNumber() {
+    return (Math.ceil(Math.random()*9));
+  }
+  
+  function handleComputerClick(i) {
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    /*const emptyNextSquares = nextSquares.filter(squares.includes(null));*/
+    if (xIsNext) {
+      nextSquares[i] = 'X';
+    } else {
+      nextSquares[randNumber()] = 'O';
+    }
+    setSquares(nextSquares);
+    setXIsNext(!xIsNext);
+  }
+
+  function handlePartnerButtonClick() {
+    setIsActive(true);
+    setHideWithoutPartnerButton(true);
+  }
+
+  function handleWithoutPartnerButtonClick() {
+    setComputerIsActive(true);
+    setHidePartnerButton(true);
+  }
+  //End of this section
+
   function handleNewGame() {
     setSquares(Array(9).fill(null));
+    setHidePartnerButton(false);
+    setHideWithoutPartnerButton(false);
+    setIsActive(false);
+    setComputerIsActive(false);
   }
 
   const winner = calculateWinner(squares);
@@ -40,7 +78,7 @@ export default function Board() {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
-  const gameBody = isActive ? (
+  const gameBodyWithPartner = isActive ? (
     <>
         <div className="status">{status}</div>
         <div className="board-row">
@@ -62,9 +100,27 @@ export default function Board() {
     </>
   ): '';
 
-  function handlePartnerClick() {
-    setIsActive(true);
-  }
+  const gameBodyWithoutPartner = computerIsActive ? (
+    <>
+        <div className="status">{status}</div>
+        <div className="board-row">
+          <Square value={squares[0]} onSquareClick={() => handleComputerClick(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleComputerClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleComputerClick(2)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[3]} onSquareClick={() => handleComputerClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleComputerClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleComputerClick(5)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[6]} onSquareClick={() => handleComputerClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleComputerClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleComputerClick(8)} />
+        </div>
+        <button id='new-game' onClick={handleNewGame} >New Game</button>
+    </>
+  ): '';
 
   return (
     <>
@@ -73,10 +129,11 @@ export default function Board() {
         <h4>How to play the game?</h4>
         <p>The game is played on a grid that's 3 squares by 3 squares. Choose your partner, you are X , your partner / the computer is O . Players take turns putting their marks in empty squares. The first player to get 3 of his / her marks in a row (up, down, across, or diagonally) is the winner.</p>
         <div>
-          <button id='partner' onClick={handlePartnerClick}>I have a <br></br> partner</button>
-          <button id='no-partner'>I don't have <br></br> a partner</button>
+          <button id='partner' onClick={handlePartnerButtonClick} hidden={hidePartnerButton}>I have a <br></br> partner</button>
+          <button id='no-partner' onClick={handleWithoutPartnerButtonClick} hidden={hideWithoutPartnerButton}>I don't have <br></br> a partner</button>
         </div>
-        {gameBody}
+        {gameBodyWithPartner}
+        {gameBodyWithoutPartner}
       </div>
     </>
   );
