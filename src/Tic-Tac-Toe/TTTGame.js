@@ -36,19 +36,23 @@ export default function Board() {
     return (Math.ceil(Math.random()*9));
   }
   
-  function handleComputerClick(i) {
+  function handleClickInComputerMode(i) {
+    //Handle users click
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
     const nextSquares = squares.slice();
-    /*const emptyNextSquares = nextSquares.filter(squares.includes(null));*/
-    if (xIsNext) {
-      nextSquares[i] = 'X';
-    } else {
-      nextSquares[randNumber()] = 'O';
-    }
+    nextSquares[i] = 'X';
     setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+
+    //Click with computer
+    clickByComputer(nextSquares);
+  }
+
+  function clickByComputer(squares) {
+    const nextSquares = squares.slice();
+    nextSquares[randNumber()] = 'O';
+    setSquares(nextSquares);
   }
 
   function handlePartnerButtonClick() {
@@ -105,19 +109,19 @@ export default function Board() {
     <>
         <div className="status">{status}</div>
         <div className="board-row">
-          <Square value={squares[0]} onSquareClick={() => handleComputerClick(0)} />
-          <Square value={squares[1]} onSquareClick={() => handleComputerClick(1)} />
-          <Square value={squares[2]} onSquareClick={() => handleComputerClick(2)} />
+          <Square value={squares[0]} onSquareClick={() => handleClickInComputerMode(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleClickInComputerMode(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClickInComputerMode(2)} />
         </div>
         <div className="board-row">
-          <Square value={squares[3]} onSquareClick={() => handleComputerClick(3)} />
-          <Square value={squares[4]} onSquareClick={() => handleComputerClick(4)} />
-          <Square value={squares[5]} onSquareClick={() => handleComputerClick(5)} />
+          <Square value={squares[3]} onSquareClick={() => handleClickInComputerMode(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClickInComputerMode(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClickInComputerMode(5)} />
         </div>
         <div className="board-row">
-          <Square value={squares[6]} onSquareClick={() => handleComputerClick(6)} />
-          <Square value={squares[7]} onSquareClick={() => handleComputerClick(7)} />
-          <Square value={squares[8]} onSquareClick={() => handleComputerClick(8)} />
+          <Square value={squares[6]} onSquareClick={() => handleClickInComputerMode(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClickInComputerMode(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClickInComputerMode(8)} />
         </div>
         <button id='new-game' onClick={handleNewGame} >New Game</button>
     </>
