@@ -31,11 +31,6 @@ export default function Board() {
     setXIsNext(!xIsNext);
   }
 
-  // New code about how 'I don't have a partner' works
-  function randNumber() {
-    return (Math.ceil(Math.random()*9));
-  }
-  
   function handleClickInComputerMode(i) {
     //Handle users click
     if (calculateWinner(squares) || squares[i]) {
@@ -46,12 +41,26 @@ export default function Board() {
     setSquares(nextSquares);
 
     //Click with computer
+    if(calculateWinner(nextSquares)) {
+      return;
+    }
     clickByComputer(nextSquares);
   }
 
   function clickByComputer(squares) {
     const nextSquares = squares.slice();
-    nextSquares[randNumber()] = 'O';
+    let emptySquaresIndex = [];
+    
+    for(let j=0; j<nextSquares.length; j++) {
+      if(squares[j] === null) {
+          emptySquaresIndex.push(j);
+      }
+    }
+
+    let randNum = (Math.floor(Math.random()*emptySquaresIndex.length));
+    let emptySquare = emptySquaresIndex[randNum];
+  
+    nextSquares[emptySquare]= 'O';
     setSquares(nextSquares);
   }
 
@@ -64,7 +73,6 @@ export default function Board() {
     setComputerIsActive(true);
     setHidePartnerButton(true);
   }
-  //End of this section
 
   function handleNewGame() {
     setSquares(Array(9).fill(null));

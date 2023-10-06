@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import style from './RPSGame.css';
-import rock from '../Images/rock.png';
-import paper from '../Images/paper.png';
-import scissors from '../Images/scissors.png';
+import rock from '../Images/rock-pixelated.png';
+import paper from '../Images/paper-pixelated.png';
+import scissors from '../Images/scissors-pixelated.png';
 
 export default function RockPaperScissors() {
     const [playerChoose, setPlayerChoose] = useState(null);
