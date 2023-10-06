@@ -7,6 +7,7 @@ import scissors from '../Images/scissors-pixelated.png';
 export default function RockPaperScissors() {
     const [playerChoose, setPlayerChoose] = useState(null);
     const [computerChoose, setComputerChoose] = useState(null);
+    const [computerName, setComputerName] = useState(null);
 
     function chooseRandomButton() {
         const randomNumber = Math.ceil(Math.random()*3);
@@ -19,7 +20,8 @@ export default function RockPaperScissors() {
         }
     };
 
-    function handleClick(e) {
+    async function handleClick(e) {
+        await partnerGenerator();
         chooseRandomButton();
         //User can click both on the button or on the image
         const id = e.target.id? e.target.id : e.target.parentNode.id;
@@ -50,9 +52,16 @@ export default function RockPaperScissors() {
         setPlayerChoose(null);
     };
 
+    async function partnerGenerator() {
+        const response = await fetch("https://randomuser.me/api");
+        const detailsOfUsers = await response.json();
+        const partnerName = detailsOfUsers.results[0].name.first;
+        setComputerName(partnerName);
+    }
+
     const winner = computerChoose ? (
         <>
-            <span className='winner'>Computer chose: {computerChoose}</span>
+            <span className='winner'>Your partner, {computerName} chose: {computerChoose}</span>
             <span className='winner'>{chooseWinner()}</span>
         </>
     ) : '';
