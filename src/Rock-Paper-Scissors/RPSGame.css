@@ -59,3 +59,9 @@ h4 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+#total-results {
+    font-size: 20px;
+    margin-top: 50px;
+    color: rgb(250, 230, 51);
+}

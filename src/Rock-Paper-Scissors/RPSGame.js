@@ -8,24 +8,31 @@ export default function RockPaperScissors() {
     const [playerChoose, setPlayerChoose] = useState(null);
     const [computerChoose, setComputerChoose] = useState(null);
     const [computerName, setComputerName] = useState(null);
+    const [playerScore, setPlayerScore] = useState(null);
+    const [computerScore, setComputerScore] = useState(null);
+    const [winnerText, setWinnerText] = useState('');
 
     function chooseRandomButton() {
         const randomNumber = Math.ceil(Math.random()*3);
         if (randomNumber === 1) {
             setComputerChoose('rock');
+            return 'rock';
         } else if (randomNumber === 2) {
             setComputerChoose('paper');
+            return 'paper';
         } else {
             setComputerChoose('scissors');
+            return 'scissors';
         }
     };
 
     async function handleClick(e) {
         await partnerGenerator();
-        chooseRandomButton();
+        const newComputerChoose = chooseRandomButton();
         //User can click both on the button or on the image
-        const id = e.target.id? e.target.id : e.target.parentNode.id;
-        setPlayerChoose(id);
+        const newPlayerChoose = e.target.id? e.target.id : e.target.parentNode.id;
+        setPlayerChoose(newPlayerChoose);
+        chooseWinner(newPlayerChoose, newComputerChoose);
     };
 
     /*function newHandleClick(choice) {
@@ -35,15 +42,15 @@ export default function RockPaperScissors() {
         }
     }*/
 
-    function chooseWinner() {
-        if (playerChoose === null) {
-            return '';
-        } else if (playerChoose === 'rock' && computerChoose === 'scissors' || playerChoose === 'paper' && computerChoose === 'rock' || playerChoose === 'scissors' && computerChoose === 'paper') {
-            return 'You won. Congratulations!';
-        } else if ( playerChoose === computerChoose) {
-            return 'Tie. Give it another try!';
+    function chooseWinner(newPlayerChoose, newComputerChoose) {
+        if (newPlayerChoose === 'rock' && newComputerChoose === 'scissors' || newPlayerChoose === 'paper' && newComputerChoose === 'rock' || newPlayerChoose === 'scissors' && newComputerChoose === 'paper') {
+            setWinnerText('You won. Congratulations!');
+            setPlayerScore(playerScore + 1);
+        } else if ( newPlayerChoose === newComputerChoose) {
+            setWinnerText('Tie. Give it another try!');
         } else {
-            return 'Computer won. Better luck next time.';
+            setWinnerText('Computer won. Better luck next time.');
+            setComputerScore(computerScore + 1);
         }
     };
 
@@ -62,7 +69,10 @@ export default function RockPaperScissors() {
     const winner = computerChoose ? (
         <>
             <span className='winner'>Your partner, {computerName} chose: {computerChoose}</span>
-            <span className='winner'>{chooseWinner()}</span>
+            <span className='winner'>{winnerText}</span>
+                <span className='winner' id='total-results'>Total results:</span>
+                <span className='winner'>You won {playerScore} times.</span>
+                <span className='winner'>You lose {computerScore} times.</span>
         </>
     ) : '';
     
